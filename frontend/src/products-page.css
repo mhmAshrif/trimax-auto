@@ -1,0 +1,67 @@
+.catalogue-product-card {
+  min-width: 0;
+}
+
+.catalogue-product-body {
+  min-width: 0;
+}
+
+.catalogue-card-actions {
+  align-items: stretch;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.catalogue-card-actions > * {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.catalogue-card-actions .button {
+  min-height: 42px;
+  padding-inline: 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.catalogue-card-actions .whatsapp-button.is-inline {
+  width: 100%;
+  min-height: 42px;
+  padding-inline: 8px;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.catalogue-card-actions .whatsapp-button.is-inline svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 640px) {
+  .catalogue-card-actions {
+    flex-direction: column;
+  }
+
+  .catalogue-card-actions > * {
+    width: 100%;
+    flex: none;
+  }
+
+  .catalogue-product-body {
+    padding: 12px 10px;
+  }
+
+  .catalogue-card-actions .whatsapp-button.is-inline {
+    gap: 5px;
+    padding-inline: 6px;
+    font-size: 9px;
+  }
+
+  .catalogue-card-actions .whatsapp-button.is-inline svg {
+    width: 15px;
+    height: 15px;
+  }
+}

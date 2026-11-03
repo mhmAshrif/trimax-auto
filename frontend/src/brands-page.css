@@ -1,0 +1,171 @@
+.brands-page {
+  min-height: 60vh;
+  padding-bottom: 84px;
+  background: var(--color-ink);
+}
+
+.brands-page-heading {
+  padding-block: 36px 42px;
+  border-bottom: 1px solid var(--color-border);
+  background:
+    linear-gradient(110deg, rgb(23 107 255 / 12%), transparent 58%),
+    #101722;
+}
+
+.brands-breadcrumb ol {
+  margin: 0 0 26px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  list-style: none;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.brands-breadcrumb a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.brands-breadcrumb a:hover {
+  color: var(--color-text);
+}
+
+.brands-breadcrumb [aria-current='page'] {
+  color: var(--color-text);
+}
+
+.brands-page-disclaimer {
+  margin: 18px 0 0;
+  color: #788397;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.brands-page-content {
+  padding-top: 40px;
+}
+
+.brand-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.brand-directory-card {
+  min-width: 0;
+  min-height: 286px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.brand-directory-card:hover {
+  border-color: #3c5274;
+  transform: translateY(-2px);
+}
+
+.brand-directory-card.is-featured {
+  border-color: rgb(23 107 255 / 65%);
+  background:
+    linear-gradient(145deg, rgb(23 107 255 / 16%), transparent 55%),
+    var(--color-card);
+}
+
+.brand-directory-card-topline {
+  width: 100%;
+  min-height: 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.brand-featured-label {
+  color: #9dbdff;
+  text-align: right;
+}
+
+.brand-logo-placeholder {
+  width: 100%;
+  min-height: 116px;
+  margin-block: 12px 16px;
+  display: grid;
+  place-items: center;
+  border-block: 1px solid var(--color-border);
+  color: #d7dce5;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.brand-logo-piaggio {
+  min-height: 142px;
+  color: var(--color-text);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.brand-logo-bajaj {
+  letter-spacing: 0.08em;
+}
+
+.brand-logo-tvs {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.brand-directory-card > p {
+  margin: 0 0 22px;
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.brand-products-link {
+  width: 100%;
+  margin-top: auto;
+  justify-content: space-between;
+}
+
+.brand-products-link:hover {
+  border-color: var(--color-blue);
+}
+
+@media (max-width: 1000px) {
+  .brand-directory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .brands-page {
+    padding-bottom: 58px;
+  }
+
+  .brands-page-heading {
+    padding-block: 28px 32px;
+  }
+
+  .brands-page-content {
+    padding-top: 24px;
+  }
+
+  .brand-directory-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .brand-directory-card {
+    min-height: 260px;
+    padding: 18px;
+  }
+}
