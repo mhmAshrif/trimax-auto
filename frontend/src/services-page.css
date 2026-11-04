@@ -193,7 +193,6 @@
   position: static;
   min-height: 46px;
   padding-inline: 16px;
-  box-shadow: none;
 }
 
 @media (max-width: 1000px) {

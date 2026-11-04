@@ -91,7 +91,7 @@ function ProductFilters({
           <button
             type="button"
             onClick={onClear}
-            className="w-full bg-[#283244] hover:bg-[#176BFF] text-white font-semibold rounded px-4 py-2 transition-colors"
+            className="button button-secondary w-full"
           >
             Clear Filters
           </button>

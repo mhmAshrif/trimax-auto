@@ -6,6 +6,12 @@ import SecondaryButton from '../SecondaryButton'
 
 function BrandStrip() {
   const brandTrack = useRef<HTMLDivElement>(null)
+  const renderBrandCards = (duplicate = false) => featuredBrands.map((brand) => (
+    <div className={`brand-placeholder${brand.featured ? ' is-featured' : ''}`} key={`${brand.id}${duplicate ? '-loop' : ''}`}>
+      {brand.featured && <span className="brand-placeholder-label">FEATURED NAME</span>}
+      <span className={`brand-name brand-name-${brand.id}`}>{brand.name}</span>
+    </div>
+  ))
 
   return (
     <section className="brands-section" id="brands" aria-labelledby="brands-title">
@@ -15,6 +21,7 @@ function BrandStrip() {
           <div className="brand-scroll-controls" aria-label="Brand list controls">
             <button
               type="button"
+              className="button button-secondary icon-button"
               aria-label="Scroll brands left"
               onClick={() => brandTrack.current?.scrollBy({ left: -260, behavior: 'smooth' })}
             >
@@ -22,6 +29,7 @@ function BrandStrip() {
             </button>
             <button
               type="button"
+              className="button button-secondary icon-button"
               aria-label="Scroll brands right"
               onClick={() => brandTrack.current?.scrollBy({ left: 260, behavior: 'smooth' })}
             >
@@ -31,12 +39,10 @@ function BrandStrip() {
         </div>
 
         <div className="brand-track" ref={brandTrack} tabIndex={0} aria-label="Provisional brand names">
-          {featuredBrands.map((brand) => (
-            <div className={`brand-placeholder${brand.featured ? ' is-featured' : ''}`} key={brand.id}>
-              {brand.featured && <span className="brand-placeholder-label">FEATURED NAME</span>}
-              <span className={`brand-name brand-name-${brand.id}`}>{brand.name}</span>
-            </div>
-          ))}
+          <div className="brand-track-rail">
+            <div className="brand-track-group">{renderBrandCards()}</div>
+            <div className="brand-track-group" aria-hidden="true">{renderBrandCards(true)}</div>
+          </div>
         </div>
         <p className="brand-disclaimer">Provisional names shown for layout only. No official relationship is implied.</p>
         <div className="brand-strip-cta">

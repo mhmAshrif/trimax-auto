@@ -191,19 +191,9 @@
 }
 
 .brand-scroll-controls button {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-border);
-  background: transparent;
-  color: var(--color-text);
+  width: 44px;
+  height: 44px;
   font-size: 17px;
-  cursor: pointer;
-  transition: border-color 160ms ease, background-color 160ms ease;
-}
-
-.brand-scroll-controls button:hover {
-  border-color: var(--color-blue);
-  background: rgb(23 107 255 / 12%);
 }
 
 .brand-track {
@@ -433,13 +423,6 @@
   position: static;
   min-height: 46px;
   padding: 0 14px;
-  border: 1px solid transparent;
-  box-shadow: none;
-  transform: none;
-}
-
-.whatsapp-button.is-inline:hover {
-  transform: none;
 }
 
 .products-footer {
@@ -1064,5 +1047,561 @@
     min-height: 210px;
     border-right: 0;
     border-bottom: 1px solid var(--color-border);
+  }
+}
+
+.homepage {
+  overflow: clip;
+  background: var(--color-ink);
+}
+
+.homepage > section.home-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.homepage > section.home-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-hero {
+  min-height: calc(100svh - 82px);
+  display: grid;
+  align-items: center;
+  isolation: isolate;
+  border-bottom-color: rgb(40 50 68 / 72%);
+  background:
+    radial-gradient(ellipse at 74% 56%, rgb(23 107 255 / 18%), transparent 44%),
+    radial-gradient(ellipse at 7% 84%, rgb(23 107 255 / 7%), transparent 33%),
+    linear-gradient(118deg, #080b12 0%, #0a101a 54%, #080b12 100%);
+}
+
+.home-hero::before {
+  z-index: -1;
+  background-size: 72px 72px;
+  opacity: 0.72;
+  mask-image: linear-gradient(90deg, transparent 4%, black 70%);
+}
+
+.home-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(112deg, transparent 38%, rgb(23 107 255 / 8%) 49%, transparent 58%);
+  background-size: 220% 100%;
+  content: '';
+  pointer-events: none;
+  animation: hero-light-sweep 14s ease-in-out infinite alternate;
+}
+
+.home-hero-grid {
+  min-height: min(860px, calc(100svh - 82px));
+  padding-block: 54px;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.home-hero-copy {
+  padding-block: 28px;
+}
+
+.home-hero-copy::before {
+  width: 44px;
+  height: 1px;
+  margin-bottom: 22px;
+  display: block;
+  background: var(--color-blue);
+  box-shadow: 30px 0 0 rgb(23 107 255 / 28%);
+  content: '';
+}
+
+.home-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.home-hero h1 {
+  max-width: 680px;
+  margin-block: 28px 22px;
+  font-size: clamp(54px, 5.3vw, 78px);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.home-hero h1 span {
+  text-shadow: 0 0 28px rgb(23 107 255 / 18%);
+}
+
+.home-hero-description {
+  max-width: 400px;
+  font-size: 14px;
+}
+
+.home-hero-actions .button {
+  min-height: 50px;
+  padding-inline: 20px;
+  backdrop-filter: blur(12px);
+}
+
+.home-hero-note {
+  margin-top: 48px;
+}
+
+.home-hero-visual {
+  height: min(74vh, 700px);
+  min-height: 440px;
+  overflow: hidden;
+  border: 1px solid rgb(167 176 192 / 14%);
+  background:
+    radial-gradient(ellipse at 55% 60%, rgb(23 107 255 / 18%), transparent 45%),
+    linear-gradient(145deg, #151b27, #080b12 72%);
+  box-shadow: 0 32px 90px rgb(0 0 0 / 48%), inset 0 0 80px rgb(23 107 255 / 7%);
+}
+
+.home-hero-visual::before {
+  z-index: 3;
+  inset: 14px;
+  border: 1px solid rgb(245 247 250 / 18%);
+  box-shadow: inset 0 0 26px rgb(23 107 255 / 12%);
+}
+
+.home-hero-visual::after {
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgb(8 11 18 / 92%) 0%, rgb(8 11 18 / 68%) 16%, transparent 52%, rgb(8 11 18 / 76%) 100%),
+    linear-gradient(90deg, rgb(8 11 18 / 40%), transparent 40%, rgb(8 11 18 / 10%)),
+    linear-gradient(180deg, rgb(23 107 255 / 8%), transparent 44%);
+}
+
+.home-hero-visual img {
+  object-position: center 64%;
+  filter: saturate(0.78) contrast(1.12) brightness(0.72);
+  transform: scale(1.035);
+  animation: hero-visual-drift 22s ease-in-out infinite alternate;
+}
+
+.home-hero-visual figcaption {
+  z-index: 4;
+  min-height: 58px;
+  padding-inline: 24px;
+  border-top: 1px solid rgb(245 247 250 / 12%);
+  background: rgb(8 11 18 / 40%);
+  backdrop-filter: blur(16px);
+  font-size: 8px;
+}
+
+.home-hero-visual figcaption > span:last-child {
+  color: #a7b0c0;
+}
+
+.company-stats-section {
+  position: relative;
+  z-index: 2;
+  padding-block: 18px 15px;
+  border-bottom: 1px solid rgb(167 176 192 / 13%);
+  background: linear-gradient(180deg, rgb(21 27 39 / 94%), rgb(10 14 22 / 94%));
+  backdrop-filter: blur(18px);
+}
+
+.company-stats-grid {
+  border-top: 1px solid rgb(167 176 192 / 14%);
+  border-left: 1px solid rgb(167 176 192 / 14%);
+  background: linear-gradient(115deg, rgb(245 247 250 / 2%), transparent 65%);
+}
+
+.company-stat {
+  position: relative;
+  min-height: 124px;
+  padding-inline: 26px;
+  border-right-color: rgb(167 176 192 / 14%);
+  border-bottom: 1px solid rgb(167 176 192 / 14%);
+  background: linear-gradient(145deg, rgb(245 247 250 / 3%), transparent 68%);
+  backdrop-filter: blur(16px);
+  transition: background-color 220ms ease, transform 220ms ease;
+}
+
+.company-stat:hover {
+  z-index: 1;
+  background-color: rgb(23 107 255 / 7%);
+  transform: translateY(-2px);
+}
+
+.company-stat p {
+  font-size: 36px;
+  text-shadow: 0 0 22px rgb(23 107 255 / 22%);
+}
+
+.company-stat h2 {
+  color: #c1cad8;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.company-stats-disclaimer {
+  color: #8995a8;
+}
+
+.brands-section,
+.features-section,
+.leadership-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgb(23 107 255 / 6%), transparent 36%),
+    #0a0e16;
+}
+
+.brands-section {
+  padding-block: 72px 60px;
+}
+
+.brand-track {
+  overflow-x: auto;
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+}
+
+.brand-track::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-track-rail,
+.brand-track-group {
+  display: flex;
+  width: max-content;
+}
+
+.brand-track-rail {
+  animation: brand-rail-drift 36s linear infinite;
+}
+
+.brand-track-group {
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.brand-track:hover .brand-track-rail,
+.brand-track:focus-within .brand-track-rail {
+  animation-play-state: paused;
+}
+
+.brand-placeholder {
+  width: clamp(200px, 22vw, 280px);
+  flex: 0 0 auto;
+  border-color: rgb(167 176 192 / 16%);
+  background: linear-gradient(145deg, rgb(245 247 250 / 5%), rgb(21 27 39 / 78%) 62%);
+  backdrop-filter: blur(14px);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.brand-placeholder:hover {
+  border-color: rgb(23 107 255 / 72%);
+  transform: translateY(-3px);
+}
+
+.brand-placeholder.is-featured {
+  border-color: rgb(23 107 255 / 72%);
+  background:
+    linear-gradient(145deg, rgb(23 107 255 / 18%), rgb(21 27 39 / 78%) 70%),
+    var(--color-card);
+  box-shadow: inset 0 0 28px rgb(23 107 255 / 7%);
+}
+
+.brand-name-piaggio {
+  font-size: 38px;
+  text-shadow: 0 0 24px rgb(23 107 255 / 22%);
+}
+
+.products-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 6% 38%, rgb(23 107 255 / 7%), transparent 34%),
+    var(--color-ink);
+}
+
+.product-card {
+  border-color: rgb(167 176 192 / 18%);
+  background: linear-gradient(145deg, rgb(245 247 250 / 4%), rgb(21 27 39 / 94%) 42%);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 22%);
+  transition: border-color 220ms ease, transform 260ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 220ms ease;
+}
+
+.product-card:hover {
+  border-color: rgb(23 107 255 / 76%);
+  box-shadow: 0 24px 54px rgb(0 0 0 / 38%), 0 0 24px rgb(23 107 255 / 11%);
+  transform: translateY(-5px);
+}
+
+.product-image-wrap {
+  height: 220px;
+  background: linear-gradient(145deg, #151b27, #080b12);
+}
+
+.product-image-wrap img {
+  filter: saturate(0.78) contrast(1.12) brightness(0.72);
+}
+
+.product-card-body {
+  padding: 21px 18px 18px;
+}
+
+.product-card h3 {
+  font-size: 19px;
+}
+
+.features-section {
+  padding-block: 92px 100px;
+}
+
+.feature-grid {
+  border-color: rgb(167 176 192 / 16%);
+  background: linear-gradient(120deg, rgb(245 247 250 / 2%), transparent 55%);
+}
+
+.feature-card {
+  border-color: rgb(167 176 192 / 16%);
+  background: linear-gradient(145deg, rgb(245 247 250 / 4%), rgb(21 27 39 / 74%) 72%);
+  transition: background-color 200ms ease, border-color 200ms ease, transform 240ms ease;
+}
+
+.feature-card:hover {
+  z-index: 1;
+  border-color: rgb(23 107 255 / 60%);
+  background-color: rgb(23 107 255 / 6%);
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  border-color: rgb(23 107 255 / 58%);
+  background: rgb(23 107 255 / 7%);
+  box-shadow: inset 0 0 20px rgb(23 107 255 / 8%);
+}
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 88% 55%, rgb(23 107 255 / 8%), transparent 38%),
+    var(--color-ink);
+}
+
+.about-visual {
+  overflow: hidden;
+  border: 1px solid rgb(167 176 192 / 18%);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 36%);
+}
+
+.about-visual img {
+  filter: saturate(0.72) contrast(1.1) brightness(0.73);
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.about-visual:hover img {
+  transform: scale(1.04);
+}
+
+.leadership-card {
+  overflow: hidden;
+  border-color: rgb(167 176 192 / 18%);
+  background: linear-gradient(145deg, rgb(245 247 250 / 4%), rgb(21 27 39 / 94%) 58%);
+  transition: border-color 200ms ease, transform 220ms ease;
+}
+
+.leadership-card:hover {
+  border-color: rgb(23 107 255 / 64%);
+  transform: translateY(-3px);
+}
+
+.leadership-portrait-placeholder {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgb(23 107 255 / 15%), transparent 56%),
+    linear-gradient(145deg, #151b27, #080b12);
+}
+
+.contact-callout {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(100deg, rgb(23 107 255 / 20%), transparent 62%),
+    linear-gradient(145deg, #151b27, #0b1019 72%);
+}
+
+.contact-callout::after {
+  position: absolute;
+  top: -90px;
+  right: -80px;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgb(23 107 255 / 18%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 26px rgb(23 107 255 / 3%), 0 0 0 52px rgb(23 107 255 / 2%);
+  content: '';
+  pointer-events: none;
+}
+
+@keyframes hero-light-sweep {
+  from { background-position: 100% 0; opacity: 0.35; }
+  to { background-position: 0 0; opacity: 0.9; }
+}
+
+@keyframes hero-visual-drift {
+  from { transform: scale(1.035) translate3d(-0.4%, 0, 0); }
+  to { transform: scale(1.08) translate3d(0.5%, -0.5%, 0); }
+}
+
+@keyframes brand-rail-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 1000px) {
+  .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero-grid {
+    min-height: min(760px, calc(100svh - 76px));
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: 28px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(48px, 6vw, 64px);
+  }
+
+  .home-hero-visual {
+    height: min(66vh, 580px);
+    min-height: 380px;
+  }
+
+  .product-image-wrap {
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero-grid {
+    min-height: auto;
+    padding-block: 48px 46px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .home-hero-copy {
+    padding-block: 0;
+  }
+
+  .home-hero-copy::before {
+    margin-bottom: 18px;
+  }
+
+  .home-hero h1 {
+    max-width: 600px;
+    font-size: clamp(42px, 11vw, 56px);
+  }
+
+  .home-hero-visual {
+    height: min(64vh, 390px);
+    min-height: 250px;
+    margin-right: 0;
+  }
+
+  .home-hero-visual::before {
+    inset: 8px;
+  }
+
+  .home-hero-visual figcaption {
+    padding-inline: 16px;
+  }
+
+  .brand-track {
+    mask-image: none;
+  }
+
+  .brand-track-rail {
+    animation-duration: 28s;
+  }
+
+  .brand-placeholder {
+    width: 210px;
+  }
+
+  .product-image-wrap {
+    height: 170px;
+  }
+
+  .leadership-card {
+    grid-template-columns: minmax(105px, 0.7fr) minmax(0, 1.3fr);
+  }
+
+  .leadership-card-copy {
+    padding: 17px 13px;
+  }
+
+  .contact-callout::after {
+    top: auto;
+    right: -150px;
+    bottom: -180px;
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-hero h1 {
+    font-size: 41px;
+  }
+
+  .leadership-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .leadership-portrait,
+  .leadership-portrait-placeholder {
+    height: 210px;
+    min-height: 210px;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage > section.home-reveal,
+  .homepage > section.home-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .home-hero::after,
+  .home-hero-visual img,
+  .brand-track-rail {
+    animation: none;
+  }
+
+  .brand-track-rail {
+    transform: none;
+  }
+
+  .product-card,
+  .feature-card,
+  .leadership-card,
+  .about-visual img,
+  .home-hero-actions .button,
+  .company-stat,
+  .brand-placeholder,
+  .brand-scroll-controls button,
+  .product-image-wrap img {
+    transition: none;
+  }
+
+  .company-stat:hover,
+  .brand-placeholder:hover,
+  .product-card:hover,
+  .feature-card:hover,
+  .leadership-card:hover,
+  .about-visual:hover img {
+    transform: none;
   }
 }

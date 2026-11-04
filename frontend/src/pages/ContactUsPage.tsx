@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import Container from '../components/Container'
 import SectionHeading from '../components/SectionHeading'
 import WhatsAppButton from '../components/WhatsAppButton'
+import SocialLinks from '../components/SocialLinks'
 import { siteConfig } from '../config/site'
 
 const contactIcons: Record<'phone' | 'email' | 'address' | 'hours', ReactNode> = {
@@ -81,13 +82,12 @@ function ContactUsPage() {
 
           <div className="contact-socials">
             <h3>Social media</h3>
-            <div>
-              {siteConfig.socialLinks.map((social) => social.url ? (
-                <a key={social.label} href={social.url} target="_blank" rel="noreferrer">{social.label}</a>
-              ) : (
-                <span key={social.label}>{social.label} link to be added</span>
-              ))}
-            </div>
+            <SocialLinks
+              className="contact-social-links"
+              linkClassName="contact-social-link"
+              placeholderClassName="contact-social-placeholder"
+              items={siteConfig.socialLinks}
+            />
           </div>
         </section>
 

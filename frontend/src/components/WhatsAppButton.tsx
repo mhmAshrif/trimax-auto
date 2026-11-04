@@ -11,7 +11,7 @@ function WhatsAppButton({ variant = 'floating', message }: WhatsAppButtonProps) 
 
   return (
     <a
-      className={`whatsapp-button${variant === 'inline' ? ' is-inline' : ''}`}
+      className={`button button-primary whatsapp-button${variant === 'inline' ? ' is-inline' : ''}`}
       href={`https://wa.me/${phoneNumber}${query}`}
       target="_blank"
       rel="noreferrer"

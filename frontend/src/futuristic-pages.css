@@ -1,0 +1,302 @@
+:root {
+  --surface-glass: rgb(17 24 36 / 82%);
+  --surface-metal: linear-gradient(145deg, rgb(41 53 70 / 92%), rgb(16 22 33 / 96%) 58%, rgb(10 14 22 / 98%));
+  --edge-blue: rgb(23 107 255 / 54%);
+  --shadow-deep: 0 22px 54px rgb(0 0 0 / 38%), inset 0 1px 0 rgb(255 255 255 / 7%);
+}
+
+.products-page-heading,
+.brands-page-heading,
+.services-page-hero,
+.contact-page-heading,
+.product-details-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #080b12;
+  background-image:
+    linear-gradient(90deg, rgb(8 11 18 / 98%) 0%, rgb(8 11 18 / 89%) 48%, rgb(8 11 18 / 70%) 100%),
+    linear-gradient(0deg, rgb(8 11 18 / 62%), transparent 72%),
+    url('./assets/image1.jpg');
+  background-position: center, center, center 57%;
+  background-size: cover;
+}
+
+.products-page-heading::after,
+.brands-page-heading::after,
+.services-page-hero::after,
+.contact-page-heading::after,
+.product-details-heading::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(rgb(23 107 255 / 8%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(23 107 255 / 8%) 1px, transparent 1px);
+  background-size: 56px 56px;
+  content: '';
+  mask-image: linear-gradient(90deg, transparent, black 80%);
+  pointer-events: none;
+}
+
+.products-page-heading > .container,
+.brands-page-heading > .container,
+.services-page-hero > .container,
+.contact-page-heading > .container,
+.product-details-heading > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.products-page-heading .section-heading-title,
+.brands-page-heading .section-heading-title,
+.services-page-hero .section-heading-title,
+.contact-page-heading .section-heading-title,
+.product-details-heading h1 {
+  text-shadow: 0 4px 26px rgb(0 0 0 / 46%), 0 0 28px rgb(23 107 255 / 12%);
+}
+
+.products-page-heading,
+.brands-page-heading,
+.services-page-hero,
+.contact-page-heading,
+.product-details-heading {
+  border-bottom-color: rgb(23 107 255 / 26%);
+  box-shadow: inset 0 -1px 0 rgb(255 255 255 / 3%);
+}
+
+.product-card,
+.brand-directory-card,
+.service-card,
+.about-purpose-card,
+.about-value-card,
+.contact-information,
+.contact-form-panel,
+.product-details-summary,
+.leadership-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgb(99 119 148 / 34%);
+  border-radius: 8px;
+  background: var(--surface-metal);
+  box-shadow: var(--shadow-deep);
+  backdrop-filter: blur(12px);
+  transition: transform 240ms cubic-bezier(0.2, 0.75, 0.25, 1), border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.product-card::before,
+.brand-directory-card::before,
+.service-card::before,
+.about-purpose-card::before,
+.about-value-card::before,
+.contact-information::before,
+.contact-form-panel::before,
+.product-details-summary::before,
+.leadership-card::before {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(255 255 255 / 4%);
+  border-radius: inherit;
+  content: '';
+  pointer-events: none;
+}
+
+.product-card:hover,
+.brand-directory-card:hover,
+.service-card:hover,
+.about-purpose-card:hover,
+.about-value-card:hover,
+.leadership-card:hover {
+  z-index: 1;
+  border-color: var(--edge-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 28px 60px rgb(0 0 0 / 46%), 0 0 26px rgb(23 107 255 / 13%), inset 0 1px 0 rgb(255 255 255 / 10%);
+}
+
+.brand-directory-card.is-featured {
+  border-color: rgb(23 107 255 / 68%);
+  background:
+    radial-gradient(ellipse at 50% 42%, rgb(23 107 255 / 17%), transparent 57%),
+    var(--surface-metal);
+  box-shadow: var(--shadow-deep), 0 0 28px rgb(23 107 255 / 12%);
+}
+
+.brand-logo-placeholder {
+  border-color: rgb(111 132 165 / 28%);
+  background: linear-gradient(180deg, rgb(8 11 18 / 12%), rgb(8 11 18 / 62%));
+  text-shadow: 0 0 22px rgb(23 107 255 / 23%);
+}
+
+.brand-logo-piaggio {
+  color: #fff;
+  text-shadow: 0 0 28px rgb(23 107 255 / 42%), 0 2px 6px rgb(0 0 0 / 65%);
+}
+
+.product-image-wrap,
+.product-gallery-main,
+.about-page-image,
+.about-visual,
+.home-hero-visual {
+  border: 1px solid rgb(119 141 172 / 32%);
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 42%), inset 0 0 40px rgb(23 107 255 / 8%);
+}
+
+.product-image-wrap::after,
+.product-gallery-main::after,
+.about-page-image::before,
+.about-visual::before {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(23 107 255 / 24%);
+  border-radius: inherit;
+  content: '';
+  pointer-events: none;
+}
+
+.product-image-wrap img,
+.product-gallery-main img,
+.about-page-image img,
+.about-visual img {
+  transition: transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 300ms ease;
+}
+
+.product-card:hover .product-image-wrap img,
+.product-gallery-main:hover img,
+.about-page-image:hover img,
+.about-visual:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.08) brightness(0.94) contrast(1.06);
+}
+
+.products-content > .product-filters,
+.contact-whatsapp-panel,
+.product-demo-badge,
+.service-icon,
+.about-value-icon {
+  border-color: rgb(84 111 154 / 44%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 6%), 0 10px 24px rgb(0 0 0 / 20%);
+}
+
+.products-content section:has(#search-name) {
+  border-color: rgb(84 111 154 / 42%);
+  border-radius: 8px;
+  background: var(--surface-glass);
+  box-shadow: var(--shadow-deep);
+  backdrop-filter: blur(14px);
+}
+
+.products-toolbar select,
+.contact-field input,
+.contact-field textarea {
+  border-color: rgb(96 116 146 / 48%);
+  border-radius: 5px;
+  background: linear-gradient(180deg, #0d1420, #080b12);
+  box-shadow: inset 0 2px 6px rgb(0 0 0 / 38%), 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+.products-toolbar select:focus-visible,
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 2px rgb(23 107 255 / 17%), inset 0 2px 6px rgb(0 0 0 / 32%);
+}
+
+.products-pagination .button,
+.product-details-actions .button,
+.services-contact-actions .button,
+.about-contact-inner .button,
+.contact-whatsapp-panel .button,
+.contact-submit {
+  min-height: 46px;
+}
+
+.about-page-intro,
+.about-contact-section,
+.services-contact-section,
+.contact-whatsapp-panel {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%), inset 0 -1px 0 rgb(23 107 255 / 12%);
+}
+
+.contact-detail-icon,
+.product-gallery-thumbnail,
+.service-icon,
+.about-value-icon {
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgb(23 107 255 / 13%), rgb(12 17 27 / 88%));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 9%), 0 5px 14px rgb(0 0 0 / 24%);
+}
+
+.brand-directory-card,
+.service-card,
+.about-value-card,
+.contact-information,
+.contact-form-panel,
+.product-details-summary,
+.about-purpose-card {
+  animation: page-card-enter 560ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.brand-directory-card:nth-child(2),
+.service-card:nth-child(2),
+.about-value-card:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.brand-directory-card:nth-child(3),
+.service-card:nth-child(3),
+.about-value-card:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.brand-directory-card:nth-child(4),
+.service-card:nth-child(4),
+.about-value-card:nth-child(4) {
+  animation-delay: 150ms;
+}
+
+@keyframes page-card-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .brand-directory-card:hover,
+  .service-card:hover,
+  .about-value-card:hover,
+  .leadership-card:hover,
+  .product-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .brand-directory-card,
+  .service-card,
+  .about-purpose-card,
+  .about-value-card,
+  .contact-information,
+  .contact-form-panel,
+  .product-details-summary,
+  .leadership-card,
+  .product-image-wrap img,
+  .product-gallery-main img,
+  .about-page-image img,
+  .about-visual img {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .product-card:hover,
+  .brand-directory-card:hover,
+  .service-card:hover,
+  .about-purpose-card:hover,
+  .about-value-card:hover,
+  .leadership-card:hover,
+  .product-card:hover .product-image-wrap img,
+  .product-gallery-main:hover img,
+  .about-page-image:hover img,
+  .about-visual:hover img {
+    transform: none;
+  }
+}

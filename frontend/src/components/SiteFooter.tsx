@@ -1,6 +1,8 @@
 import { siteConfig } from '../config/site'
 import { Link } from 'react-router'
+import logo from '../assets/logo-transparent.png'
 import Container from './Container'
+import SocialLinks from './SocialLinks'
 
 function SiteFooter() {
   return (
@@ -8,7 +10,7 @@ function SiteFooter() {
       <Container className="footer-main">
         <div className="footer-brand">
           <Link className="footer-wordmark" to="/">
-            TRIMAX <span className="wordmark-subtitle">AUTO</span>
+            <img className="footer-logo" src={logo} alt="Trimax Auto Parts" />
           </Link>
           <p>{siteConfig.companyDescription}</p>
         </div>
@@ -35,17 +37,12 @@ function SiteFooter() {
 
         <section className="footer-column" aria-labelledby="footer-social-heading">
           <h2 id="footer-social-heading">Social</h2>
-          <div className="footer-socials">
-            {siteConfig.socialLinks.map((item) =>
-              item.url ? (
-                <a className="footer-social-link" href={item.url} key={item.label}>
-                  {item.label}
-                </a>
-              ) : (
-                <span key={item.label}>{item.label} link to be added</span>
-              ),
-            )}
-          </div>
+          <SocialLinks
+            className="footer-socials"
+            linkClassName="footer-social-link"
+            placeholderClassName="footer-social-placeholder"
+            items={siteConfig.socialLinks}
+          />
         </section>
       </Container>
 

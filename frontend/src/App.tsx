@@ -16,6 +16,7 @@ import './product-details.css'
 import './site-layout.css'
 import './services-page.css'
 import './contact-page.css'
+import './futuristic-pages.css'
 
 function App() {
   return (

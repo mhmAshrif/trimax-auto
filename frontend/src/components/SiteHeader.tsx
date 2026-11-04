@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import { siteConfig } from '../config/site'
+import logo from '../assets/logo-transparent.png'
 import Container from './Container'
 
 function SiteHeader() {
@@ -17,8 +18,7 @@ function SiteHeader() {
           to="/"
           aria-label="Trimax Auto home"
         >
-          <span className="wordmark-name">TRIMAX</span>
-          <span className="wordmark-subtitle">AUTO</span>
+          <img className="wordmark-logo" src={logo} alt="Trimax Auto Parts" />
         </Link>
 
         <nav
@@ -29,7 +29,7 @@ function SiteHeader() {
           <div className="navigation-links">
             {siteConfig.navigation.map((item) => (
               <Link
-                className={`navigation-link${item.href === currentPath ? ' is-current' : ''}${item.href === '/contact' ? ' contact-link' : ''}`}
+                className={`navigation-link${item.href === currentPath ? ' is-current' : ''}${item.href === '/contact' ? ' contact-link button button-primary' : ''}`}
                 to={item.href}
                 key={item.href}
                 aria-current={
@@ -47,7 +47,7 @@ function SiteHeader() {
         </nav>
 
         <button
-          className={`menu-toggle${isMenuOpen ? ' is-open' : ''}`}
+          className={`button button-secondary icon-button menu-toggle${isMenuOpen ? ' is-open' : ''}`}
           type="button"
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isMenuOpen}

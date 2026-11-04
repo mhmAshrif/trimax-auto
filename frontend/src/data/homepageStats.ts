@@ -1,14 +1,16 @@
 export type HomepageStat = {
   id: string
-  value: string
+  target: number
+  suffix?: string
+  useGrouping?: boolean
   label: string
 }
 
 export const homepageStats: HomepageStat[] = [
-  { id: 'experience', value: '16+', label: 'Years Experience' },
-  { id: 'parts', value: '2,500+', label: 'Parts Available' },
-  { id: 'team', value: '10+', label: 'Team Members' },
-  { id: 'established', value: '2010', label: 'Established' },
+  { id: 'experience', target: 16, suffix: '+', label: 'Years Experience' },
+  { id: 'parts', target: 2500, suffix: '+', useGrouping: true, label: 'Parts Available' },
+  { id: 'team', target: 10, suffix: '+', label: 'Team Members' },
+  { id: 'established', target: 2010, label: 'Established' },
 ]
 
 export const homepageStatsDisclaimer = 'Client-provided placeholders. Confirm all figures before publishing.'

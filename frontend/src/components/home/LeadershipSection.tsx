@@ -2,7 +2,7 @@ import Container from '../Container'
 import SectionHeading from '../SectionHeading'
 import { leadershipProfiles } from '../../data/leadership'
 
-function LeadershipSection() {
+function LeadershipSection({ showAboutLink = true }: { showAboutLink?: boolean }) {
   return (
     <section className="leadership-section" aria-labelledby="leadership-title">
       <Container>
@@ -13,7 +13,9 @@ function LeadershipSection() {
             eyebrow="THE PEOPLE BEHIND TRIMAX AUTO"
             description="Leadership details and portraits are presented as editable placeholders where not yet confirmed."
           />
-          <a className="button button-secondary" href="/about">About Trimax Auto <span aria-hidden="true">↗</span></a>
+          {showAboutLink && (
+            <a className="button button-secondary" href="/about">About Trimax Auto <span aria-hidden="true">↗</span></a>
+          )}
         </div>
 
         <div className="leadership-grid">

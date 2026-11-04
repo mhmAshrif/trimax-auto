@@ -3,6 +3,7 @@ import vehicleImage from '../assets/image1.jpg'
 import Container from '../components/Container'
 import SectionHeading from '../components/SectionHeading'
 import SecondaryButton from '../components/SecondaryButton'
+import LeadershipSection from '../components/home/LeadershipSection'
 import { aboutUsContent } from '../data/aboutUs'
 
 const valueIcons: Record<(typeof aboutUsContent.values)[number]['icon'], ReactNode> = {
@@ -80,6 +81,8 @@ function AboutUsPage() {
           </div>
         </Container>
       </section>
+
+      <LeadershipSection showAboutLink={false} />
 
       <section className="about-contact-section" aria-labelledby="about-contact-title">
         <Container className="about-contact-inner">
