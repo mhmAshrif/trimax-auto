@@ -1566,6 +1566,16 @@
   }
 }
 
+@media (max-width: 640px) {
+  .homepage > section:not(.home-hero):not(.company-stats-section) {
+    padding-block: 64px;
+  }
+
+  .homepage > .company-stats-section {
+    padding-block: 28px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .homepage > section.home-reveal,
   .homepage > section.home-reveal.is-revealed {

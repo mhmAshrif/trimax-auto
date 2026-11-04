@@ -67,6 +67,14 @@
 }
 
 @media (max-width: 640px) {
+  .products-page-heading {
+    padding-block: 32px 40px;
+  }
+
+  .products-content {
+    padding-block: 64px;
+  }
+
   .catalogue-card-actions {
     flex-direction: column;
   }
