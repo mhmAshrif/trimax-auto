@@ -123,6 +123,13 @@
   font-weight: 700;
 }
 
+.brand-logo-placeholder .brand-logo-image {
+  display: block;
+  width: min(100%, 220px);
+  height: 100px;
+  object-fit: contain;
+}
+
 .brand-directory-card > p {
   margin: 0 0 22px;
   color: var(--color-muted);

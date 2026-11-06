@@ -20,9 +20,9 @@ export const leadershipProfiles: DirectorProfile[] = [
     imagePlaceholderLabel: 'Portrait for Mohamed Rimas to be supplied',
   },
   {
-    id: 'director-two',
-    name: 'Director name to be confirmed',
-    position: 'Position to be confirmed',
+    id: 'mohamed-rishan',
+    name: 'Mohamed Rishan',
+    position: 'Founder / Director',
     heading: 'Leadership profile to be confirmed',
     description: 'Add a verified profile description after the director’s details and preferred wording are confirmed.',
     imageAlt: 'Director portrait placeholder; image to be supplied after confirmation.',

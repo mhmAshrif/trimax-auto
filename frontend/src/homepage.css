@@ -261,6 +261,13 @@
   font-weight: 700;
 }
 
+.brand-placeholder .brand-logo-image {
+  display: block;
+  width: min(100%, 180px);
+  height: 64px;
+  object-fit: contain;
+}
+
 .brand-disclaimer {
   margin: 16px 0 0;
   color: #788397;

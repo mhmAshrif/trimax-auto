@@ -8,8 +8,8 @@ function BrandStrip() {
   const brandTrack = useRef<HTMLDivElement>(null)
   const renderBrandCards = (duplicate = false) => featuredBrands.map((brand) => (
     <div className={`brand-placeholder${brand.featured ? ' is-featured' : ''}`} key={`${brand.id}${duplicate ? '-loop' : ''}`}>
-      {brand.featured && <span className="brand-placeholder-label">FEATURED NAME</span>}
-      <span className={`brand-name brand-name-${brand.id}`}>{brand.name}</span>
+      {brand.featured && <span className="brand-placeholder-label">FEATURED BRAND</span>}
+      <img className="brand-logo-image" src={brand.logoUrl} alt={`${brand.name} logo`} />
     </div>
   ))
 
@@ -44,7 +44,7 @@ function BrandStrip() {
             <div className="brand-track-group" aria-hidden="true">{renderBrandCards(true)}</div>
           </div>
         </div>
-        <p className="brand-disclaimer">Provisional names shown for layout only. No official relationship is implied.</p>
+        <p className="brand-disclaimer">Brand names and logos are shown for catalogue identification only. No official relationship is implied.</p>
         <div className="brand-strip-cta">
           <SecondaryButton href="/brands">View All Brands <span aria-hidden="true">↗</span></SecondaryButton>
         </div>

@@ -22,7 +22,7 @@ function BrandsPage() {
             description="Explore the brand labels currently represented in our demonstration catalogue."
           />
           <p className="brands-page-disclaimer">
-            Brand names are shown for catalogue identification only. No official dealership or authorized partnership is implied.
+            Brand names and logos are shown for catalogue identification only. No official dealership or authorized partnership is implied.
           </p>
         </Container>
       </section>
@@ -36,10 +36,10 @@ function BrandsPage() {
             >
               <div className="brand-directory-card-topline">
                 <span>BRAND / {brand.id.toUpperCase()}</span>
-                {brand.featured && <span className="brand-featured-label">FEATURED NAME</span>}
+                {brand.featured && <span className="brand-featured-label">FEATURED BRAND</span>}
               </div>
               <div className={`brand-logo-placeholder brand-logo-${brand.id}`}>
-                {brand.name}
+                <img className="brand-logo-image" src={brand.logoUrl} alt={`${brand.name} logo`} />
               </div>
               <p>{brand.description}</p>
               <Link
